@@ -1,11 +1,13 @@
 package net.wyannnnn.firefreeze;
 
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.wyannnnn.firefreeze.commands.FireFreeze;
 import net.wyannnnn.firefreeze.events.OnChatReceived;
+import net.wyannnnn.firefreeze.events.OnWorldRender;
 
 @Mod(modid = Main.MODID, version = Main.VERSION)
 public class Main {
@@ -17,6 +19,7 @@ public class Main {
     public void init(FMLInitializationEvent event) {
 
         MinecraftForge.EVENT_BUS.register(new OnChatReceived());
+        MinecraftForge.EVENT_BUS.register(new OnWorldRender());
 
         ClientCommandHandler.instance.registerCommand(new FireFreeze());
     }

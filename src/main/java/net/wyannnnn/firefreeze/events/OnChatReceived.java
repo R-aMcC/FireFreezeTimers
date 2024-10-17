@@ -8,13 +8,14 @@ import net.wyannnnn.firefreeze.utils.ChatUtils;
 import net.wyannnnn.firefreeze.utils.SkyblockUtils;
 
 public class OnChatReceived {
+    static Long ttFreeze = null;
     @SubscribeEvent(priority = EventPriority.HIGHEST, receiveCanceled = true)
     public void onChatReceived(ClientChatReceivedEvent e) {
         if(Main.enabled && SkyblockUtils.inSkyblock && SkyblockUtils.inCatacombs){
             String msg = e.message.getUnformattedText();
             if(msg.equals("[BOSS] The Professor: Oh? You found my Guardians' one weakness?")){
                 new Thread(()->{
-                    long ttFreeze = System.currentTimeMillis()+5000;
+                     ttFreeze = System.currentTimeMillis()+5000;
                     while(System.currentTimeMillis()<ttFreeze){
                         try{
                             ChatUtils.sendChat("FireFreeze in "+(ttFreeze-System.currentTimeMillis())+" ms");
@@ -26,6 +27,7 @@ public class OnChatReceived {
 
                     }
                     ChatUtils.sendChat("FireFreeze NOW");
+                    ttFreeze = null;
                 }).start();
             } else if (msg.contains("[BOSS]")) {
                 //ChatUtils.sendChat(msg);
