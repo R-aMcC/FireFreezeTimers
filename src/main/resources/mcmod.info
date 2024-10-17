@@ -1,0 +1,16 @@
+[
+{
+  "modid": "firefreezetimers",
+  "name": "Firefreeze Timer",
+  "description": "Simple f3/m3 firefreeze timers: MORE TO COME",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Wyan"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
