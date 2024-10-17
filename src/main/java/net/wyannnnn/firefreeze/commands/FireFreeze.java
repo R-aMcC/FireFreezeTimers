@@ -5,6 +5,9 @@ import net.minecraft.command.ICommandSender;
 import net.wyannnnn.firefreeze.Main;
 import net.wyannnnn.firefreeze.utils.ChatUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FireFreeze extends CommandBase {
 
     @Override
@@ -33,5 +36,15 @@ public class FireFreeze extends CommandBase {
 
     @Override
     public int getRequiredPermissionLevel() {return 0;}
+
+    @Override
+    public List<String> getCommandAliases()
+    {
+        List<String> aliases = new ArrayList<>();
+        aliases.add("ff");
+        aliases.add("fft");
+        aliases.add("firefreezetimers");
+        return aliases;
+    }
 
 }

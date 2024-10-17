@@ -7,21 +7,19 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.wyannnnn.firefreeze.Main;
 import net.wyannnnn.firefreeze.utils.ChatUtils;
 import net.wyannnnn.firefreeze.utils.Constants;
-import net.wyannnnn.firefreeze.utils.SkyblockUtils;
 import net.wyannnnn.firefreeze.utils.UiUtils;
 
 public class FireFreezeTimer {
     static Long ttFreeze = null;
     @SubscribeEvent(priority = EventPriority.HIGHEST, receiveCanceled = true)
     public void onChatReceived(ClientChatReceivedEvent e) {
-        if (Main.enabled && SkyblockUtils.inSkyblock && SkyblockUtils.inCatacombs) {
+
+        if (Main.enabled) {
             String msg = e.message.getUnformattedText();
+            System.out.println(msg);
             if (msg.equals("[BOSS] The Professor: Oh? You found my Guardians' one weakness?")) {
                 ttFreeze = System.currentTimeMillis() + 6000;
-            } else if (msg.contains("[BOSS]")) {
-                //ChatUtils.sendChat(msg);
-                System.out.println(msg);
-
+                ChatUtils.sendChat("Set time");
             }
         }
     }

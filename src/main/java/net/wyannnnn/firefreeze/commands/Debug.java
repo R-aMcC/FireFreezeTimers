@@ -5,7 +5,6 @@ import net.minecraft.command.ICommandSender;
 import net.wyannnnn.firefreeze.events.FireFreezeTimer;
 import net.wyannnnn.firefreeze.utils.ChatUtils;
 import net.wyannnnn.firefreeze.utils.Constants;
-import scala.Int;
 
 import java.lang.reflect.Field;
 import java.util.IllegalFormatException;
@@ -34,6 +33,7 @@ public class Debug extends CommandBase {
                 }catch (Exception ignored){
 
                 }
+                return;
             }
 
 
@@ -76,9 +76,9 @@ public class Debug extends CommandBase {
                 ChatUtils.sendChat("§cWrong type");
             } catch (Exception e) {
                 if (args.length == 1) {
-                    ChatUtils.sendChat("§cSomething went wrong... Command [/srmdebug " + args[0] + "]");
+                    ChatUtils.sendChat("§cSomething went wrong... Command [/fftdebug " + args[0] + "]");
                 } else {
-                    ChatUtils.sendChat("§cSomething went wrong... Command [/srmdebug " + args[0] + " " + args[1] + "]");
+                    ChatUtils.sendChat("§cSomething went wrong... Command [/fftdebug " + args[0] + " " + args[1] + "]");
                 }
             }
         }
