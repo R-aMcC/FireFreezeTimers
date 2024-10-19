@@ -18,7 +18,7 @@ import net.wyannnnn.firefreeze.utils.ChatUtils;
 @Mod(modid = Main.MODID, version = Main.VERSION)
 public class Main {
     public static final String MODID = "firefreezetimers";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.0.1";
     public static boolean enabled = true;
     public static boolean ticks = true;
     

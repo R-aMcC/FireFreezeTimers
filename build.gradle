@@ -15,7 +15,7 @@ plugins {
 
 apply plugin: "net.minecraftforge.gradle.forge"
 
-version = "1.0"
+version = "1.0.1"
 group = "wyannnnn.xyz" //http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "FirefreezeTimers" //name of the output jar
 
