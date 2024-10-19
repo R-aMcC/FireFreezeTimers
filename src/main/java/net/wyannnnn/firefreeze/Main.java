@@ -27,9 +27,7 @@ public class Main {
 
         MinecraftForge.EVENT_BUS.register(new FireFreezeTimer());
         MinecraftForge.EVENT_BUS.register(new OnReceivePacket());
-        if(ticks){
-            MinecraftForge.EVENT_BUS.register(new OnServerTick());
-        }
+        MinecraftForge.EVENT_BUS.register(new OnServerTick());
         MinecraftForge.EVENT_BUS.register(this);
 
         ClientCommandHandler.instance.registerCommand(new FireFreeze());
