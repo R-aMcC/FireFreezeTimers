@@ -48,7 +48,7 @@ public class FireFreezeTimer {
                 if(tkstFreeze != null){
                     String text;
                     if(tkstFreeze > 20){
-                        text = "§bFireFreeze in " + (tkstFreeze/20) + " seconds";
+                        text = "§bFireFreeze in " + (tkstFreeze-20) + " ticks";
                     }else if (tkstFreeze > 0){
                         text = "§bFireFreeze NOW";
                     }else{
