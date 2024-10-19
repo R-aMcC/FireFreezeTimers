@@ -71,9 +71,25 @@ shadowJar {
     configurations = [project.configurations.shade]
     duplicatesStrategy DuplicatesStrategy.EXCLUDE //prevent duplicates
     classifier "" //prevent creation of unshadowed jar
+    if (project.hasProperty("toModsFolder")) {
+        destinationDir = file("${System.getenv("APPDATA")}\\.minecraft\\mods")
+    }
 }
 
 reobf {
     //reobfuscate the shadowed jar
     shadowJar {}
+}
+
+
+if (project.hasProperty("toModsFolder")) {
+    tasks.create("finalize") {
+        doLast {
+            exec {
+                commandLine "cmd", "/c", "start", "finish.bat"
+            }
+        }
+    }
+
+    tasks.getByName("assemble").dependsOn tasks.getByName("finalize")
 }

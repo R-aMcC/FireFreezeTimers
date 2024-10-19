@@ -34,6 +34,16 @@ public class Debug extends CommandBase {
 
                 }
                 return;
+            }else if(args[0].equals("tkstf") && args.length > 1){
+                try{
+                    Field field = FireFreezeTimer.class.getDeclaredField("tkstFreeze");
+                    field.setAccessible(true);
+                    field.set(null, parseInt(args[1])+20);
+                    ChatUtils.sendChat("Ticks set");
+                    return;
+                }catch (Exception e){
+                    ChatUtils.sendChat(e.getMessage());
+                }
             }
 
 
