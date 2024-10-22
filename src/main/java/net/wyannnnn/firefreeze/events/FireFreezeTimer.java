@@ -18,7 +18,6 @@ public class FireFreezeTimer {
 
         if (Main.enabled) {
             String msg = e.message.getUnformattedText();
-            System.out.println(msg);
             if (msg.equals("[BOSS] The Professor: Oh? You found my Guardians' one weakness?")) {
                 if(!Main.ticks){
                     ttFreeze = System.currentTimeMillis() + 6000;
